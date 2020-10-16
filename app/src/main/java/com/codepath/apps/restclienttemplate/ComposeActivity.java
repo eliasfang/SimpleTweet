@@ -57,7 +57,7 @@ public class ComposeActivity extends AppCompatActivity {
                     Toast.makeText(ComposeActivity.this, "Sorry, your tweet is too long", Toast.LENGTH_LONG).show();
                     return;
                 }
-                Toast.makeText(ComposeActivity.this, tweetContent, Toast.LENGTH_LONG).show();
+                // Toast.makeText(ComposeActivity.this, tweetContent, Toast.LENGTH_LONG).show();
                 // Make an API call to Twitter to publish the tweet
                 client.publishTweet(tweetContent, new JsonHttpResponseHandler() {
                     @Override
@@ -82,24 +82,6 @@ public class ComposeActivity extends AppCompatActivity {
                         Log.e(TAG, "onFailure to publish tweet", throwable);
                     }
                 });
-            }
-        });
-
-        // Set edit text listener for counter
-        etCompose.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
             }
         });
     }
